@@ -12,6 +12,5 @@ htmlcov/
 dist/
 build/
 *.egg-info/
-
+plant_seedlings_classifier.egg-info/
 .DS_Store
-weeds_classifier/
