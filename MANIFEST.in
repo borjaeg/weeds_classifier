@@ -1,0 +1,2 @@
+include weeds_classifier/models/*.h5
+include weeds_classifier/results/*.csv
