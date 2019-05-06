@@ -7,7 +7,6 @@
 import numpy as np
 import os
 import cv2
-import base64
 import pandas as pd
 
 from keras.applications import *
@@ -34,9 +33,6 @@ logging.basicConfig(level=logging.DEBUG, format = "%(name)s - %(levelname)s - %(
 warnings.filterwarnings("ignore")
 
 RANDOM_STATE = 2019
-print("MALAKA")
-print(os.listdir("."))
-
 
 # In[17]:
 
@@ -330,16 +326,6 @@ def load_best_parameters(metric):
             print(result[0])
     finally:
         connection.close()
-
-
-# In[ ]:
-
-def readb64(uri):
-    encoded_data = uri.split(',')[1]
-    nparr = np.fromstring(base64.b64decode(encoded_data), np.uint8)
-    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    #img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
-    return img
 
 
 #load_best_parameters("est_micro_f1")

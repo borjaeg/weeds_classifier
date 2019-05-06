@@ -5,6 +5,10 @@ HERE = pathlib.Path(__file__).parent
 
 README = (HERE / "README.md").read_text()
 
+def list_reqs(fname="requirements.txt"):
+    with open(fname) as fd:
+        return fd.read().splitlines()
+
 setup(
 	name="plant-seedlings-classifier",
 	version="0.1",
@@ -17,5 +21,7 @@ setup(
     license="MIT",
     packages=["weeds_classifier"],
     include_package_data=True,
-    install_requires=["keras", "opencv-python", "scikit-learn", "pandas", "numpy"]
+    install_requires=list_reqs()
 )
+
+#["keras", "opencv-python", "scikit-learn", "pandas", "numpy"]
